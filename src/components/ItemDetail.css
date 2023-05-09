@@ -1,0 +1,57 @@
+.CartItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; /* Agregado para centrar verticalmente */
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.CartItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.Header {
+  text-align: center;
+}
+
+.ItemHeader {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.ItemImg {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.Info {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.ItemFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.Option {
+  padding: 8px 16px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
