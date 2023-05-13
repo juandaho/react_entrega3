@@ -8,6 +8,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { CartProvider } from "./components/CartContext";
 import { Cart } from "./components/Cart";
+import { Checkout } from "./components/Checkout";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             />
             <Route path="/item/:itemId" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout/>} />
             <Route path="*" element={<h1>404 - No aparece la página</h1>} /> */
           </Routes>
         </CartProvider>

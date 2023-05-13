@@ -1,21 +1,38 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Cart.css";
 import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
+import {  doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
 
 export const Cart = () => {
   const { cart, clearCart } = useContext(CartContext);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const fetchCartItems = async () => {
+      const cartItemsData = [];
+      for (const item of cart) {
+        const itemDoc = await getDoc(doc(db, "products", item.id));
+        const itemData = itemDoc.data();
+        cartItemsData.push({ ...itemData, quantity: item.quantity });
+      }
+      setCartItems(cartItemsData);
+    };
+
+    fetchCartItems();
+  }, [cart]);
 
   const getTotal = () => {
     let total = 0;
-    cart.forEach((item) => {
+    for (const item of cartItems) {
       total += item.price * item.quantity;
-    });
+    }
     return total;
   };
 
-  if (cart.length === 0) {
+  if (cartItems.length === 0) {
     return (
       <div className="cart-container">
         <h2>Carrito vacío</h2>
@@ -29,7 +46,7 @@ export const Cart = () => {
   return (
     <div className="cart-container">
       <div className="cart-items">
-        {cart.map((item) => (
+        {cartItems.map((item) => (
           <CartItem key={item.id} {...item} />
         ))}
       </div>
@@ -45,4 +62,3 @@ export const Cart = () => {
     </div>
   );
 };
-
