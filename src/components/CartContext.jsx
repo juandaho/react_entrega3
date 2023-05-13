@@ -5,11 +5,13 @@ export const CartContext = createContext({
     cart: [],
 });
 
+
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     console.log(cart);
+    
     const addItem = (item, quantity) => {
-        if (!addItem(item.id)) {
+        if (!isInCart(item.id)) {
             setCart((prev) => [...prev, { ...item, quantity }]);
         } else {
             console.error("El item ya existe en el carrito");
@@ -34,4 +36,7 @@ export const CartProvider = ({ children }) => {
             {children}
         </CartContext.Provider>
     )
+
 }
+
+

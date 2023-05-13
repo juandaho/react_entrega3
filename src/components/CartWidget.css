@@ -1,0 +1,28 @@
+.cartWidget {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+
+.cartImg {
+  width: 20px;
+  height: 20px;
+  fill: #000;
+}
+
+.cartQuantity {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background-color: #ff3f3f;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 50%;
+}
