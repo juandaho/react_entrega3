@@ -34,21 +34,18 @@ export const ItemDetail = ({
       <header className="Header">
         <h2 className="ItemHeader">{name}</h2>
       </header>
-      <picture>
-        <img src={img} alt="img" className="ItemImg" />
-      </picture>
-
+      <div className="ImageContainer">
+        <img src={img} alt={name} className="ItemImg" />
+      </div>
       <section>
         <p className="Info">Categoría: {category}</p>
-
+        <p className="Info">Descripción: {description}</p>
         <p className="Info">Precio: ${price}</p>
       </section>
-
       <footer className="ItemFooter">
         {quantityAdded > 0 ? (
           <Link to="/cart" className="Option">
-            {" "}
-            Terminar Compra{" "}
+            Terminar Compra
           </Link>
         ) : (
           <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />

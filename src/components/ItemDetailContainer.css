@@ -1,51 +1,72 @@
+/* ItemDetailContainer.css */
+
 .ItemDetailContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .ItemDetail {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .ItemImg {
-    max-width: 200px; 
-    max-height: 200px; 
-    margin: 10px; 
-  }
-  
-  
-  .ItemDetail h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
- }
-  .ItemDetail h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .ItemDetail p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-  
-  .ItemDetail button {
-    padding: 10px 20px;
-    background-color: #008CBA;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .ItemDetail button:hover {
-    background-color: #005F6B;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.error {
+  color: red;
+  font-size: 1.2rem;
+}
+
+.loading {
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.ItemDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ItemDetail img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.ItemDetail h2 {
+  margin: 20px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.ItemDetail p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.ItemDetail button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #008CBA; /* Blue color */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.ItemDetail button:hover {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+}

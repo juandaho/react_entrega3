@@ -1,28 +1,51 @@
-.cartWidget {
+.cart-item {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: #000;
-  position: relative;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.cartImg {
-  width: 20px;
-  height: 20px;
-  fill: #000;
+.cart-item-content {
+  flex-grow: 1;
+  padding-left: 10px; /* Agregado para un mejor espaciado */
 }
 
-.cartQuantity {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  background-color: #ff3f3f;
-  color: #fff;
-  font-size: 12px;
-  border-radius: 50%;
+.cart-item-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.cart-item-price {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  margin-bottom: 5px; /* Agregado para un mejor espaciado */
+}
+
+.cart-item-quantity {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  margin-bottom: 5px; /* Agregado para un mejor espaciado */
+}
+
+.cart-item-remove {
+  color: #ffffff;
+  background-color: #FF6347; /* Cambiado a un color rojo para un contraste alto */
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px; /* Agregado para un mejor espaciado */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Agregado para suavizar el cambio de color al pasar el ratón */
+}
+
+.cart-item-remove:hover {
+  background-color: #FF4500; /* Cambiado a un color rojo oscuro al pasar el ratón */
 }
