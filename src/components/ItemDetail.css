@@ -15,4 +15,8 @@
   object-fit: cover; /* Para mantener las proporciones de la imagen */
 }
 
-/* El resto del código no sufre cambios */
+.ItemFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -43,14 +43,16 @@ export const ItemDetail = ({
         <p className="Info">Precio: ${price}</p>
       </section>
       <footer className="ItemFooter">
-        {quantityAdded > 0 ? (
-          <Link to="/cart" className="Option">
-            Terminar Compra
-          </Link>
-        ) : (
-          <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
-        )}
-      </footer>
+  {quantityAdded > 0 ? (
+    <div className="centerOption">
+      <Link to="/cart" className="Option">
+        Terminar Compra
+      </Link>
+    </div>
+  ) : (
+    <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
+  )}
+</footer>
     </article>
   );
 };

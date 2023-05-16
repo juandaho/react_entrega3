@@ -1,8 +1,42 @@
+/* Cart.css */
+
 .cart-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  justify-content: center;
+}
+
+.cart-button,
+.option-link {
+  background-color: #008CBA; /* Ajusta a tu color de preferencia */
+  color: white;
+  border: none;
+  padding: 5px 10px; /* Tamaño reducido */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px; /* Tamaño de fuente reducido */
+  margin: 5px 2px; /* Margen reducido */
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 3px; /* Radio del borde reducido */
+}
+
+.cart-button:hover,
+.option-link:hover {
+  background-color: white;
+  color: #75c1fd;
+  border: 1px solid #008CBA;
+}
+
+.option-link {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: white; /* Cambia el color del texto de los enlaces */
+}
+
+.option-link:hover {
+  color: #75c1fd; /* Cambia el color del texto de los enlaces al pasar el ratón por encima */
 }
 
 .cart-items {
@@ -12,16 +46,7 @@
 }
 
 .cart-summary {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.cart-button {
-  margin-top: 10px;
-}
-
-.option-link {
-  margin-top: 10px;
-  color: #333;
-  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -1,5 +1,6 @@
 .cart-item {
   display: flex;
+  justify-content: space-between; /* Añadido para alinear el botón de eliminar a la derecha */
   align-items: center;
   background-color: #f2f2f2;
   border: 1px solid #ccc;
@@ -18,6 +19,9 @@
 
 .cart-item-content {
   flex-grow: 1;
+  display: flex; /* Añadido para poder alinear el contenido verticalmente */
+  flex-direction: column; /* Añadido para alinear el contenido verticalmente */
+  justify-content: center; /* Añadido para alinear el contenido verticalmente */
 }
 
 .cart-item-title {
@@ -32,3 +36,33 @@
   color: #666;
   margin: 0;
 }
+
+.cart-item-remove {
+  background-color: #008CBA; /* Ajusta a tu color de preferencia */
+  color: #ffffff;
+  border: none;
+  padding: 10px; /* Ajusta el padding para cambiar el tamaño del botón */
+  cursor: pointer;
+  border-radius: 50%; /* Esto hará que el botón sea redondo */
+  width: 30px; /* Ajusta el ancho del botón */
+  height: 30px; /* Ajusta la altura del botón */
+  text-align: center; /* Esto centrará la 'X' en el botón */
+  line-height: 20px; /* Ajusta esto al mismo valor que la altura para centrar verticalmente la 'X' */
+  font-size: 14px; /* Ajusta el tamaño de la 'X' */
+}
+
+.cart-item-remove {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-item-remove svg {
+  width: 50px; /* Ajusta estos valores según tus necesidades */
+  height: 50px;
+  fill: red; /* Ajusta este color según tus necesidades */
+}
+

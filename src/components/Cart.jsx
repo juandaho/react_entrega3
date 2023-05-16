@@ -3,7 +3,7 @@ import "./Cart.css";
 import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
-import {  doc, getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 
 export const Cart = () => {
@@ -20,10 +20,9 @@ export const Cart = () => {
       }
       setCartItems(cartItemsData);
     };
-  
+
     fetchCartItems();
   }, [cart]);
-  
 
   const getTotal = () => {
     let total = 0;
@@ -48,7 +47,7 @@ export const Cart = () => {
     <div className="cart-container">
       <div className="cart-items">
         {cartItems.map((item) => (
-          <CartItem key={item.id} {...item} />
+          <CartItem key={item.cartItemId} {...item} />
         ))}
       </div>
       <div className="cart-summary">

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./CartItem.css";
-import { useContext } from "react";
 import { CartContext } from "./CartContext";
+import { ReactComponent as DeleteIcon } from "./delete.svg";
 
 const CartItem = ({ cartItemId, name, price, quantity }) => {
   const removeItem = useCartRemoveItem();
@@ -11,12 +11,14 @@ const CartItem = ({ cartItemId, name, price, quantity }) => {
   };
 
   return (
-    <div className="cart-item">
+    <div className="cart-item" key={cartItemId}>
       <div className="cart-item-content">
-        <h4 className="cart-item-title">{name}</h4> {/* Agregado clase para estilos */}
-        <p className="cart-item-price">Precio: ${price}</p> {/* Agregado clase para estilos */}
-        <p className="cart-item-quantity">Cantidad: {quantity}</p> {/* Agregado clase para estilos */}
-        <button className="cart-item-remove" onClick={handleRemove}>Eliminar</button> {/* Agregado clase para estilos */}
+        <h4 className="cart-item-title">{name}</h4>
+        <p className="cart-item-price">Precio: ${price}</p>
+        <p className="cart-item-quantity">Cantidad: {quantity}</p>
+        <button className="cart-item-remove" onClick={handleRemove}>
+          <DeleteIcon />
+        </button>
       </div>
     </div>
   );

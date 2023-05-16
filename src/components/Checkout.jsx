@@ -16,11 +16,15 @@ export const Checkout = () => {
     setLoading(true);
 
     try {
+      if (typeof total !== 'number' || isNaN(total)) {
+        throw new Error('El valor de total no es válido');
+      }
+
       const objOrder = {
         buyer: { name, phone, email },
         items: cart,
         date: Timestamp.fromDate(new Date()),
-        total: total,
+        total: total.toFixed(2), // Round total to 2 decimal places
       };
 
       const batch = writeBatch(db);
@@ -66,6 +70,17 @@ export const Checkout = () => {
         <h2>Gracias por su compra!</h2>
         <p>Su número de orden es: {orderId}</p>
         <Link to="/">Volver al inicio</Link>
+      </div>
+    );
+  }
+
+  if (typeof total !== 'number' || isNaN(total)) {
+    return (
+      <div className="checkout">
+        <h2>Error de total</h2>
+        <p>El valor de total no es válido. Por favor, verifique su carrito y vuelva a intentarlo.</p>
+        <p>Valor de total: {total}</p> {/* Agregado */}
+        <Link to="/cart">Volver al carrito</Link>
       </div>
     );
   }
