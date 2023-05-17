@@ -12,12 +12,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100px; /* Ajusta este valor según tus necesidades */
+  width: 100px; 
   margin-bottom: 10px;
 }
 
 .Button {
-  background-color: #008CBA;
+  background-color: #008cba;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -26,8 +26,6 @@
 .Number {
   margin: 0 10px;
 }
-
-
 
 .centerOption {
   display: flex;

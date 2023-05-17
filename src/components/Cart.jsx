@@ -16,7 +16,11 @@ export const Cart = () => {
       for (const item of cart) {
         const itemDoc = await getDoc(doc(db, "products", item.id));
         const itemData = itemDoc.data();
-        cartItemsData.push({ ...itemData, cartItemId: item.id, quantity: item.quantity });
+        cartItemsData.push({
+          ...itemData,
+          cartItemId: item.id,
+          quantity: item.quantity,
+        });
       }
       setCartItems(cartItemsData);
     };

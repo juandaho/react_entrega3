@@ -1,7 +1,5 @@
-
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-
 
 // Your web app's Firebase configuration
 // const firebaseConfig = {
@@ -19,9 +17,9 @@ const firebaseConfig = {
   projectId: "react-197f9",
   storageBucket: "react-197f9.appspot.com",
   messagingSenderId: "975159165993",
-  appId: "1:975159165993:web:2f94fe70fb2db32b828838"
+  appId: "1:975159165993:web:2f94fe70fb2db32b828838",
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext } from "react";
 
 export const CartContext = createContext({
   cart: [],
@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
     if (!isInCart(item.id)) {
       setCart((prev) => [...prev, { ...item, quantity }]);
     } else {
-      console.error('El item ya existe en el carrito');
+      console.error("El item ya existe en el carrito");
     }
   };
 
@@ -42,7 +42,9 @@ export const CartProvider = ({ children }) => {
   const total = calculateTotal();
 
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, total }}>
+    <CartContext.Provider
+      value={{ cart, addItem, removeItem, clearCart, total }}
+    >
       {children}
     </CartContext.Provider>
   );

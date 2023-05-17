@@ -1,5 +1,3 @@
-/* ItemDetailContainer.css */
-
 .ItemDetailContainer {
   display: flex;
   justify-content: center;
@@ -54,7 +52,7 @@
 .ItemDetail button {
   padding: 10px 20px;
   margin-top: 20px;
-  background-color: #008CBA; /* Blue color */
+  background-color: #008cba;
   border: none;
   color: white;
   text-align: center;
@@ -67,6 +65,6 @@
 }
 
 .ItemDetail button:hover {
-  background-color: #4CAF50; /* Green color */
+  background-color: #4caf50;
   color: white;
 }

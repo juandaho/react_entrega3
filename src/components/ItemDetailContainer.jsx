@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
-import { getDoc, doc } from 'firebase/firestore';
-import { db } from '../firebase/firebaseConfig';
-import ItemDetail from './ItemDetail';
-import './ItemDetailContainer.css';
-
+import { useParams } from "react-router-dom";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
+import ItemDetail from "./ItemDetail";
+import "./ItemDetailContainer.css";
 
 const useLoadProduct = (itemId) => {
   const [product, setProduct] = useState(null);
@@ -20,7 +19,7 @@ const useLoadProduct = (itemId) => {
         if (doc.exists()) {
           const data = doc.data();
 
-          console.log('Producto obtenido:', data);  // imprime los datos del producto
+          console.log("Producto obtenido:", data);
           const productAdapted = {
             id: doc.id,
             category: data.category,
@@ -29,7 +28,7 @@ const useLoadProduct = (itemId) => {
             name: data.name,
             price: data.price,
             stock: data.stock,
-            img: data.img
+            img: data.img,
           };
           setProduct(productAdapted);
         } else {

@@ -1,5 +1,3 @@
-/* Cart.css */
-
 .cart-container {
   display: flex;
   flex-direction: column;
@@ -9,18 +7,18 @@
 
 .cart-button,
 .option-link {
-  background-color: #008CBA; /* Ajusta a tu color de preferencia */
+  background-color: #008CBA;
   color: white;
   border: none;
-  padding: 5px 10px; /* Tamaño reducido */
+  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px; /* Tamaño de fuente reducido */
-  margin: 5px 2px; /* Margen reducido */
+  font-size: 14px;
+  margin: 5px 2px;
   cursor: pointer;
   transition-duration: 0.4s;
-  border-radius: 3px; /* Radio del borde reducido */
+  border-radius: 3px;
 }
 
 .cart-button:hover,
@@ -31,12 +29,12 @@
 }
 
 .option-link {
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
-  color: white; /* Cambia el color del texto de los enlaces */
+  text-decoration: none;
+  color: white;
 }
 
 .option-link:hover {
-  color: #75c1fd; /* Cambia el color del texto de los enlaces al pasar el ratón por encima */
+  color: #75c1fd;
 }
 
 .cart-items {
