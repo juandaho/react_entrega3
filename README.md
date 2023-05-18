@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Proyecto ALMENTE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto que presenta los servicios de productos sicologicos para compra, llamado ALMENTE. Los productos en compra son:
 
-## Available Scripts
+- Libros
+- Sesiones de Terapia
+- Cursos
 
-In the project directory, you can run:
+# Instalación y Configuración
 
-### `npm start`
+Antes de empezar,  tener instalado Node.js y npm.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Instalar dependencias**
 
-### `npm test`
+   Navega al directorio del proyecto y ejecuta: `npm install`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- npm install  react-router-dom
+- npm install bootstrap
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Base de Datos
+La aplicación está conectada con Firebase - Google.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Detalles de la Aplicación
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+La aplicación de comercio electrónico está desarrollada en React, que maneja el enrutamiento a varias páginas como la lista de productos, detalles del producto, carrito y la página de pago.
 
-### `npm run eject`
+### Componentes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**App** 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Aplicación principal que gestiona el enrutamiento.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**ItemCount**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Un contador de artículos con botones para incrementar, decrementar y agregar artículos al carrito.
 
-## Learn More
+**NavBar**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+La barra de navegación de la aplicación, que incluye enlaces a diferentes categorías (Libros, Sesiones y Cursos) y un widget del carrito.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Cart**
 
-### Code Splitting
+Muestra todos los productos en el carrito del usuario, proporciona una opción para eliminar todos los productos y también muestra el costo total de los productos.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**CartContext**
 
-### Analyzing the Bundle Size
+Define el contexto del carrito que permite manejar el estado del carrito (añadir, remover y limpiar artículos) a lo largo de la aplicación React.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**CartItem**
 
-### Making a Progressive Web App
+Muestra un artículo en el carrito con su nombre, precio, cantidad y una opción para eliminarlo.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**CartWidget**
 
-### Advanced Configuration
+Muestra un ícono de carrito que incluye un contador con el total de artículos actualmente en el carrito.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Checkout**
 
-### Deployment
+Gestiona el proceso de pago. Recoge los detalles del comprador, verifica el stock de los productos en el carrito y crea una orden de compra en la base de datos de Firebase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**CheckoutForm**
 
-### `npm run build` fails to minify
+Es un formulario que recoge los detalles del comprador (nombre, teléfono y correo electrónico) y los envía al componente padre Checkout al confirmar.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Item**
+
+Muestra un artículo individual con su nombre, imagen, precio y stock disponible, y proporciona un enlace para ver más detalles.
+
+**ItemDetail**
+
+Muestra detalles más extensos de un artículo, incluyendo la descripción, categoría, precio y una opción para añadir el artículo al carrito.
+
+**ItemDetailContainer**
+
+Busca en la base de datos de Firebase el artículo que corresponde con el ID proporcionado en la URL y muestra sus detalles a través del componente ItemDetail
+
+**ItemList**
+
+Lista todos los productos proporcionados a través de su prop products.
+
+**ItemListContainer**
+
+Recupera los productos de una categoría especificada en la URL desde Firebase y los muestra a través del componente ItemList.js.
